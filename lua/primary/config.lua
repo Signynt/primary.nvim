@@ -5,7 +5,7 @@ local config
 vim = vim or { g = {}, o = {} }
 
 local function opt(key, default)
-  key = "tokyonight_" .. key
+  key = "primary_" .. key
   if vim.g[key] == nil then
     return default
   end

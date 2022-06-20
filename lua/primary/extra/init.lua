@@ -1,6 +1,6 @@
 package.path = "./lua/?/init.lua;./lua/?.lua"
 
-local config = require("tokyonight.config")
+local config = require("primary.config")
 
 local function write(str, fileName)
 	print("[write] extra/" .. fileName)
@@ -27,14 +27,14 @@ local styles = {
 }
 
 for extra, ext in pairs(extras) do
-	local plugin = require("tokyonight.extra." .. extra)
+	local plugin = require("primary.extra." .. extra)
 	for style, style_name in pairs(styles) do
 		config.style = style
-		config = config or require("tokyonight.config")
+		config = config or require("primary.config")
 		config.transform_colors = true
-		local colors = require("tokyonight.colors").setup(config)
-        local fname = extra .. "_tokyonight_" .. style .. "." .. ext
-        colors["_upstream_url"] = "https://github.com/folke/tokyonight.nvim/raw/main/extras/" .. fname
+		local colors = require("primary.colors").setup(config)
+        local fname = extra .. "_primary_" .. style .. "." .. ext
+        colors["_upstream_url"] = "https://github.com/folke/primary.nvim/raw/main/extras/" .. fname
         colors["_style_name"] = "Tokyo Night" .. style_name
 		write(plugin.generate(colors), fname)
 	end

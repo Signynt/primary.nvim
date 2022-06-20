@@ -1,4 +1,4 @@
-local util = require("tokyonight.util")
+local util = require("primary.util")
 
 local M = {}
 
