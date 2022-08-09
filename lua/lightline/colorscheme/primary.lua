@@ -37,7 +37,7 @@ primary.tabline = {
   tabsel = {{ colors.blue, colors.fg_gutter }, { colors.dark3, colors.bg }},
 }
 
-if vim.o.background == "light" then
+if vim.g.primary_style == "day" then
   for _, mode in pairs(primary) do
     for _, section in pairs(mode) do
       for _, subsection in pairs(section) do

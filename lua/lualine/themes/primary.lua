@@ -36,7 +36,7 @@ primary.inactive = {
   c = { bg = colors.bg_statusline, fg = colors.fg_gutter },
 }
 
-if vim.o.background == "light" then
+if vim.g.primary_style == "day" then
   for _, mode in pairs(primary) do
     for _, section in pairs(mode) do
       if section.bg then

@@ -127,7 +127,7 @@ To enable the `tokyonight` colorscheme for `Lightline` :
 The theme comes in three styles, `storm` , a darker variant `night` and `day`.
 The **day** style will be used if:
 - `vim.g.tokyonight_style == "day"`
-- or `vim.o.background == "light"`
+-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 or `vim.g.primary_style == "day"`
  Option                              
  Default   
  Description                                                                                                                                                     

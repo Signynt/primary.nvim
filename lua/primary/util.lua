@@ -78,7 +78,8 @@ function util.getColor(color)
     return color
   end
   if not util.colorCache[color] then
-    util.colorCache[color] = util.invertColor(color)
+    return color -- disable color inversion due to day theme
+--  util.colorCache[color] = util.invertColor(color)
   end
   return util.colorCache[color]
 end
@@ -202,7 +203,7 @@ function util.terminal(colors)
   vim.g.terminal_color_6 = colors.cyan
   vim.g.terminal_color_14 = colors.cyan
 
-  if vim.o.background == "light" then
+  if vim.g.primary_style == "day" then
     for i = 0, 15, 1 do
       vim.g["terminal_color_" .. i] = util.getColor(vim.g["terminal_color_" .. i])
     end
@@ -283,7 +284,8 @@ function util.light(brightness)
         local hex = string.format("#%06x", hl[key])
         local color = util.invertColor(hex)
         if brightness then
-          color = util.brighten(hex, brightness)
+          return color
+--        color = util.brighten(hex, brightness)
         end
         table.insert(def, "gui" .. def_key .. "=" .. color)
       end

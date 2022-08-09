@@ -45,7 +45,7 @@ function M.setup(config)
     git = { change = "#2882C3", add = "#42B885", delete = "#DF453A", conflict = "#DF453A" },
     gitSigns = { add = "#2F9369", change = "#256EA2", delete = "#DF453A" },
   }
-  if config.style == "night" or config.style == "day" or vim.o.background == "light" then
+  if config.style == "night" or config.style == "day" or vim.g.primary_style == "day" then
     colors.bg = "#F7F3EE" --background-primary
     colors.bg_dark = "#EBE2D5" --color-l-gray-30 (bottom bar)
   end
@@ -89,7 +89,7 @@ function M.setup(config)
 
   util.color_overrides(colors, config)
 
-  if config.transform_colors and (config.style == "day" or vim.o.background == "light") then
+  if config.transform_colors and (config.style == "day" or vim.g.primary_style == "day") then
     return util.light_colors(colors)
   end
 
