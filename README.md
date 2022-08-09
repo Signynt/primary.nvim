@@ -1,7 +1,5 @@
 # 🏙 Tokyo Night
 
-Test
-
 A dark and light Neovim theme written in Lua ported from the Visual Studio Code [TokyoNight](https://github.com/enkia/tokyo-night-vscode-theme) theme. Includes extra themes for Kitty, Alacritty, iTerm and Fish.
 
 ## Storm
